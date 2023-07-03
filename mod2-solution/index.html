@@ -7,21 +7,21 @@
   <script src="angular.min.js"></script>
   <script src="app.js"></script>
   <body>
-    <div ng-controller="ToBuyController">
+    <div ng-controller="ToBuyController as toBuy">
       <h1>To Buy</h1>
       <ol>
-        <li ng-repeat="item in toBuyItems">
+        <li ng-repeat="item in toBuy.toBuyItems">
           Buy {{item.quantity}} {{item.name}}
-          <button ng-click="checkOff($index)">Bought</button>
+          <button ng-click="toBuy.checkOff($index)">Bought</button>
         </li>
       </ol>
-      <p ng-if="toBuyItems == 0">Everything is bought!</p>
+      <p ng-if="toBuy.toBuyItems == 0">Everything is bought!</p>
     </div>
-    <div ng-controller="AlreadyBoughtController">
+    <div ng-controller="AlreadyBoughtController as abc">
       <h1>Already Bought</h1>
-      <p ng-if="boughtItems == 0">Nothing bought yet</p>
+      <p ng-if="abc.boughtItems == 0">Nothing bought yet</p>
       <ol>
-        <li ng-repeat="item in boughtItems">
+        <li ng-repeat="item in abc.boughtItems">
           Bought {{item.quantity}} {{item.name}}
         </li>
 </ol>
