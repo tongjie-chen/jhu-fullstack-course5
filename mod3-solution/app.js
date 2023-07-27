@@ -1,4 +1,5 @@
-angular.module('NarrowItDownApp', [])
+(function(){
+    angular.module('NarrowItDownApp', [])
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuSearchService', MenuSearchService)
     .directive('listItemDescription', ListItemDescription)
@@ -60,3 +61,4 @@ function ListItemDescription() {
 
     return ddo;
 }
+})();
