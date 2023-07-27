@@ -36,7 +36,7 @@ function foundItems() {
     var ddo = {
         scope: {
             found: "<",
-            onRemove: "&onRemove"
+            onRemove2: "&onRemove"
         },
         templateUrl:"foundItems.template.html",
         controller: ListController,
@@ -47,10 +47,10 @@ function foundItems() {
 }
 
 function ListController() {
-    var list = this;
-    list.onRemove = function(index){
-        list.found.splice(index, 1);
-    }
+    // var list = this;
+    // list.onRemove2 = function(index){
+    //     list.found.splice(index, 1);
+    // }
 }
 
 function ListItemDescription() {
