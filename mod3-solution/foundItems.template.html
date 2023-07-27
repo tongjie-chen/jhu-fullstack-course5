@@ -1,12 +1,6 @@
 <ul>
-<li ng-repeat='item in found'>
+<li ng-repeat='item in list.found'>
   <list-item-description></list-item-description>
-  <button ng-click="onRemove($index);">Don't want this one</button>
+  <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
 </li>
 </ul>
-<!-- <li> -->
-<!--   <div ng-bind='{{ item.quantity }} of {{ item.name }}'> -->
-<!--   </div> -->
-<!--   <button ng-click="list.removeItem($index);">Remove Item</button> -->
-<!--   ABC -->
-<!-- </li> -->

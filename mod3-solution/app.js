@@ -34,14 +34,23 @@ function MenuSearchService($http) {
 
 function foundItems() {
     var ddo = {
-        // scope: {
-        //     found: "<"
-        //     // onRemove: 
-        // },       
-        
-        templateUrl:"foundItems.template.html"
+        scope: {
+            found: "<",
+            onRemove: "&onRemove"
+        },
+        templateUrl:"foundItems.template.html",
+        controller: ListController,
+        controllerAs: "list",
+        bindToController: true
     };
     return ddo;
+}
+
+function ListController() {
+    var list = this;
+    list.onRemove = function(index){
+        list.found.splice(index, 1);
+    }
 }
 
 function ListItemDescription() {
