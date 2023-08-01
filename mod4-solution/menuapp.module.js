@@ -5,9 +5,9 @@ angular.module("MenuApp", ['data', 'ui.router'])
 
 CategoryCtrl.$inject = ['$scope', 'MenuDataService', 'categoryData']
 function CategoryCtrl($scope, MenuDataService, categoryData) {
-    console.log("categories");
-    console.log(categoryData.data);
-    $scope.data = categoryData.data;
+    // console.log("categories");
+    // console.log(categoryData.data);
+    this.categoryData = categoryData;
 }
 
 function MenuAppCtrl(){

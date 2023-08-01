@@ -1,12 +1,16 @@
 angular.module('MenuApp')
     .component('items', {
-        'template': "Items<li ng-repeat='item in data.data'>{{item.short_name}}</li>",
-        'bindings': {
-            data: '<'
+        template: "<li>{{$ctrl.menuItem.name}}</li>",
+        // controller: 'ItemCompCtrl',
+        bindings: {
+            menuItem: '<'
         }
     })
-    .controller('ItemCtrl', ItemCtrl);
+    .controller('ItemCtrl', ItemCtrl)
+    // .controller('ItemCompCtrl', ItemCompCtrl);
 
-function ItemCtrl(MenuDataService, data) {
-    console.log(data.data)
+function ItemCtrl(data) {
+    this.data = data
+    // console.log(data);
+    // console.log("items")
 }
