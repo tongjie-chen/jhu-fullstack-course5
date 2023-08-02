@@ -1,0 +1,31 @@
+<div class="container">Sign up page
+  <form name="signupForm" novalidate>
+  <div>
+    <input name="firstName" ng-model="signupCtrl.user.fName" type="text" value=""/ placeholder="First Name" minlength="2">
+    <span ng-if="signupForm.firstName.$error.minlength && signupForm.firstName.$touched">Must be at least 2 letters</span>
+  </div>
+  <div>
+    <input name="lastName" ng-model="signupCtrl.user.lName" type="text" value=""/ placeholder="Last Name" ng-minlength="2">
+<span ng-if="signupForm.lastName.$error.minlength && signupForm.lastName.$touched">Must be at least 2 letters</span>    
+  </div>
+  <div>
+    <input name="email" ng-model="signupCtrl.user.email" type="email" value=""/ placeholder="Email">
+    <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">Must be in the format of a@b</span>
+  </div>
+  <div>
+    <input name="phone" ng-model="signupCtrl.user.phone" type="tel" value=""/ placeholder="Phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+    <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+      Phone must be in the format ###-###-####.
+    </span>
+  </div>
+  <div>
+    <input name="fav" ng-model="signupCtrl.fav" type="text" placeholder="Favorite menu"/>
+    <span ng-if="!signupCtrl.fav_valid && signupCtrl.validated && signupForm.fav.$touched">
+      No such menu number exists
+    </span>
+  </div>
+  <button ng-disabled="signupForm.$invalid" ng-click="signupCtrl.go()">Submit</button>
+
+</form>
+</div>
+<div ng-if="signupCtrl.completed">Your information has been saved</div>

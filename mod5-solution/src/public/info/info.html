@@ -1,0 +1,24 @@
+<div class="container">
+  <table>
+    <tr>
+      <td>First name</td>
+      <td>{{infoCtrl.data.fName}}</td>
+    </tr>
+    <tr>
+      <td>Last name</td>
+      <td>{{infoCtrl.data.lName}}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{infoCtrl.data.email}}</td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td>{{infoCtrl.data.phone}}</td>
+    </tr>
+    <tr>
+      <td>Favorite menu</td>
+      <td><img ng-src="images/menu/{{infoCtrl.data.cat_short_name}}/{{infoCtrl.data.cat_short_name + (infoCtrl.data.menu_number + 1)}}.jpg"/></td>
+    </tr>
+  </table>
+</div>
